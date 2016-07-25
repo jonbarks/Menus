@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<!-- <link rel="stylesheet" href="menu.css" type="text/css"> -->
+<title>Food List</title>
+</head>
+<body>
+
+<?php 
+if( $foodListError)
+{
+?>
+	
+<div class="error foodlisterror">
+<p>An error has occurred.</p> 
+<p>Error Messsage: <?= $errorMessage ?>.</p>
+<p>Error Code    : <?= $errorCode ?>.</p>
+<p>Please try again.</p>
+</div>
+
+<?php
+// end $errors
+}
+else {
+?>
+
+
+<div id="foodtable-div">
+<table id="foodtable">
+<thead id="foodtable-head">
+	<tr>
+		<th>Name</th>
+		<th>Calories</th>
+	</tr>
+</thead>
+<tbody id="foodtable-body">
+
+<?php 
+
+
+foreach( $foodRows as $food)
+{
+?>
+	<tr>
+	<td>
+	<?= $food->getName(); ?>
+	</td>
+	<td>
+	<?= $food->getCalories(); ?>
+	</td>
+	</tr>
+	
+<?php 
+}
+}
+?>
+
+</tbody>
+</table>
+</div>
+
+
+</body>
+</html>

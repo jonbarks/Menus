@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="menu.css" type="text/css">
+<title>Food Entry</title>
+</head>
+
+<body>
+
+<?php
+if( $newFoodAdded)
+{ 
+?>
+<span class="foodadded">
+<?= $foodname ?> with <?= $calories ?> calories was added.
+</span>
+
+<?php
+// end $newFoodAdded
+}
+
+if( $newFoodError)
+{
+?>
+	
+<div class="error addfooderror">
+<p>There was the following error adding <?= $foodname?>.</p> 
+<p>Error Messsage: <?= $errorMessage ?>.</p>
+<p>Error Code    : <?= $errorCode ?>.</p>
+<p>Please try again.</p>
+</div>
+
+<?php
+// end $errors
+}
+?>
+
+<div class="foodentry">
+<br>
+Food Entry
+<br>
+<form method="post" action="FoodEntry.php">
+<pre>
+Enter a food name (and optional description) and its calories:
+	       Name: <input type="text" maxlength="127" required name="foodname"> Calories: <input type="number" width="4" min="0" required name="calories" > 
+	Description: <input type="text" maxlength="255" name="description"> 
+	<input type="submit" value="Add Food">
+	<input type="hidden" name="addFood" value="addFood">
+</pre>	
+</form>
+</div>
+
+
+</body>
+</html>
