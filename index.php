@@ -1,5 +1,6 @@
-<?php
-// Just a place holder file...
+<?php 
+require_once 'Utils.php';
+$auth = new Authenticate();
 ?>
 <head>
 <title>Menus Index</title>
@@ -15,11 +16,18 @@
 <link rel="stylesheet" href="menu.css" type="text/css">
 </head>
 <body>
-<h2><center>Menus Index</center></h2>
-<center><a href="FoodEntry.php" data-role=button" id="AddFoodButton" class="btn btn-theme-blue">Add New Food</a></center>
-<center><a href="FoodList.php" data-role=button" id="ListFoodButton" class="btn btn-jumbotron btn-theme-green">List All Foods</a></center>
+
+<header>
+<?php
+echoRibbon( $auth);
+?>
+</header>
+
+<iframe src="http://www.psych.med.umich.edu/patient-care/eating-disorders-program/" height="100%" width="100%"></iframe>
+
+<!-- <h2><center>Menus Index</center></h2> -->
+<!-- <center><a href="FoodEntry.php" data-role=button" id="AddFoodButton" class="btn btn-theme-blue">Add New Food</a></center> -->
+<!-- <center><a href="FoodList.php" data-role=button" id="ListFoodButton" class="btn btn-jumbotron btn-theme-green">List All Foods</a></center> -->
 </body>
 </html>
-<?
-//just spit it out...
-?>
+

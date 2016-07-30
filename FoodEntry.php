@@ -1,9 +1,13 @@
-
 <?php
 require_once 'objects/MenuModel.php';
 require_once 'interfaces/IFood.php';
 require_once 'objects/FoodFactory.php';
 require_once 'Utils.php';
+$auth = new Authenticate();
+if( !$auth->isSignedIn()){
+	header( "Location: index.php");
+	exit;
+}
 
 $newFoodAdded = false;
 $newFoodError = false;

@@ -34,5 +34,5 @@ $databaseConnectionParameters = new DatabaseConnectionParameters(
 '3306'
 );
 
-?>
+
 

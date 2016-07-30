@@ -47,5 +47,42 @@ class MenuModel implements IMenuModel
 		return $food;
 	}
 	
+	public function getUserIdFromUsername( $username)
+	{
+		
+	}
+	
+	public function getUserFromUserId( $userId)
+	{
+		
+	}
+
+	public function getUserFromUsername( $username)
+	{
+	
+	}
+	
+	public function isValidUsernamePassword( $username, $password)
+	{
+		$connection = DatabaseConnection::getInstance()->getConnection();
+		
+		$sql = $connection->prepare("SELECT user_id, username, password FROM user
+        WHERE username = ? AND
+        password = ?
+        LIMIT 1");
+
+		$sql->bindValue(1, $username);
+		$sql->bindValue(2, $password);
+		
+		// TODO: use hash to one-way encrypt given password and compare to passwords that are stored encrypted
+		// TODO: Don't forget the salt
+// 		$hashed_password = hash('sha256', $password);
+// 		$sql->bindValue(2, $pas);
+		
+		$sql->execute();
+		if($sql->rowCount() == 1)
+			return true;
+		return false;
+	}
 }
-?>
+
