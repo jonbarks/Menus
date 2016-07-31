@@ -23,7 +23,11 @@ echoRibbon( $auth);
 ?>
 </header>
 
-<iframe src="http://www.psych.med.umich.edu/patient-care/eating-disorders-program/" height="100%" width="100%"></iframe>
+<!-- <iframe src="http://www.psych.med.umich.edu/patient-care/eating-disorders-program/" height="100%" width="100%"></iframe> -->
+<iframe src="https://www.wikipedia.org/" height="100%" width="100%"></iframe>
+<!-- <iframe src="http://www.weather.com/" height="100%" width="100%"></iframe> -->
+<!-- <iframe src="http://www.theonion.com/" height="100%" width="100%"></iframe> -->
+
 
 <!-- <h2><center>Menus Index</center></h2> -->
 <!-- <center><a href="FoodEntry.php" data-role=button" id="AddFoodButton" class="btn btn-theme-blue">Add New Food</a></center> -->
