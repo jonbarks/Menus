@@ -1,7 +1,3 @@
-<?php 
-require_once 'Utils.php';
-$auth = new Authenticate();
-?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,30 +6,9 @@ $auth = new Authenticate();
 <title>Food List</title>
 </head>
 <body>
-<header>
 <?php
-echoRibbon( $auth);
+	include 'ribbon.html';
 ?>
-</header>
-<?php 
-if( $foodListError)
-{
-?>
-	
-<div class="error foodlisterror">
-<p>An error has occurred.</p> 
-<p>Error Messsage: <?= $errorMessage ?>.</p>
-<p>Error Code    : <?= $errorCode ?>.</p>
-<p>Please try again.</p>
-</div>
-
-<?php
-// end $errors
-}
-else {
-?>
-
-
 <div id="foodtable-div">
 <table id="foodtable">
 <thead id="foodtable-head">
@@ -45,8 +20,6 @@ else {
 <tbody id="foodtable-body">
 
 <?php 
-
-
 foreach( $foodRows as $food)
 {
 ?>
@@ -60,7 +33,6 @@ foreach( $foodRows as $food)
 	</tr>
 	
 <?php 
-}
 }
 ?>
 

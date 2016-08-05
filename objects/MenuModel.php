@@ -25,8 +25,7 @@ class MenuModel implements IMenuModel
 	public function getAllFoods()
 	{
 		$connection = DatabaseConnection::getInstance()->getConnection();
-// 		$sqlquery = "SELECT name, calories FROM food";
-		$sqlquery = "SELECT * FROM food";
+		$sqlquery = "SELECT name, calories, description FROM food";
 		
 		$statement = $connection->prepare( $sqlquery);
 		$statement->execute(); 

@@ -25,6 +25,11 @@ class Authenticate
 		return $isValid;
 	}
 	
+	public function getUsernameFromSession()
+	{
+		return $_SESSION['username'];
+	}
+	
 	public function startSession()
 	{
 		$_SESSION['username'] = $_POST["username"];
@@ -37,4 +42,5 @@ class Authenticate
 		unset( $_SESSION['username']);
 		session_destroy();
 	}	
+	
 }

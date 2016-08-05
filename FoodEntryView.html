@@ -1,7 +1,4 @@
-<?php 
-require_once 'Utils.php';
-$auth = new Authenticate();
-?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,11 +7,9 @@ $auth = new Authenticate();
 </head>
 
 <body>
-<header>
 <?php
-echoRibbon( $auth);
+include 'ribbon.html';
 ?>
-</header>
 <?php
 if( $newFoodAdded)
 { 
@@ -27,27 +22,12 @@ if( $newFoodAdded)
 // end $newFoodAdded
 }
 
-if( $newFoodError)
-{
 ?>
-	
-<div class="error addfooderror">
-<p>There was the following error adding <?= $foodname?>.</p> 
-<p>Error Messsage: <?= $errorMessage ?>.</p>
-<p>Error Code    : <?= $errorCode ?>.</p>
-<p>Please try again.</p>
-</div>
-
-<?php
-// end $errors
-}
-?>
-
 <div class="foodentry">
 <br>
 Food Entry
 <br>
-<form method="post" action="FoodEntry.php">
+<form method="post" action="/base/Food/add">
 <pre>
 Enter a food name (and optional description) and its calories:
 	       Name: <input type="text" maxlength="127" required name="foodname"> Calories: <input type="number" width="4" min="0" required name="calories" > 

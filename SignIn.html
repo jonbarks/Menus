@@ -1,7 +1,3 @@
-<?php
-
-?>
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,13 +5,17 @@
 <title>Menus Login</title>
 </head>
 <body>
-<form action="verifySignIn.php" method="post">
+<form action="/base/Auth/verifySignIn" method="post">
     User Name:<br>
     <input type="text" name="username"><br><br>
     Password:<br>
     <input type="password" name="password"><br><br>
-    <input type="submit" name="submit" value="Sign In">
-</form>
+<!--     <input type="submit" name="submit" value="Sign In"> -->
+    
+	<input type="submit" value="Sign In">
+	<input type="hidden" name="submit" value="signIn">
+    
+    </form>
 </body>
 </html>
 

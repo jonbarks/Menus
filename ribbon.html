@@ -1,0 +1,25 @@
+
+<header>
+
+<?php
+if( $isSignedIn){
+?>	
+	<div class=ribbon> Hello,
+	<?php print $username; ?>
+	<a href="/base/Auth/signOut" >Sign Out</a>
+	<a href="/base/Index/index" >Main Menu</a>
+	<a href="/base/Food/add" >Add New Food</a>
+	<a href="/base/Food/listAll" >List All Foods</a>
+	</div>
+<?php 
+} else {
+?>
+	<div class=ribbon > Hello,
+	<a href="/base/Auth/signIn" >Sign In</a>
+	</div>
+<?
+}
+?>
+</header>
+
+
