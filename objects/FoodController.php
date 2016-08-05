@@ -92,10 +92,24 @@ class FoodController
 	
 	private function displayExceptionAndExit($ex)
 	{
+		displayException($ex);
+		exit;
+	}
+
+	private function displayException($ex)
+	{
 		$this->foodView->setVar( "errorMessage", $ex->getMessage());
 		$this->foodView->setVar( "errorCode", $ex->getCode());
 		$this->foodView->display('ErrorView.html');
-		exit;
 	}
 	
+	public function search( $param1, $param2)
+	{
+		$this->redirectToIndexIfNotSignedIn();
+		$this->setSignIn();
+		// http://local.menus.com/base/Food/search/name/cabbage
+		$this->foodView->setVar( "errorMessage", "Searched for $param1 $param2");
+		$this->foodView->setVar( "errorCode", "Not Yet Implemented");
+		$this->foodView->display('ErrorView.html');
+	}
 }
