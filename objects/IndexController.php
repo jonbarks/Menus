@@ -11,9 +11,10 @@ class IndexController
 	public function index()
 	{
 		$auth = new Authenticate();
-
 		$isSignedIn = $auth->isSignedIn();
-		$username = $_SESSION['username'];
+		if( $isSignedIn) {
+			$username = $auth->getUsernameFromSession();
+		}
 		
 		include "index.html";
 	}

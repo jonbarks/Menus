@@ -36,7 +36,7 @@ class FrontController implements IFrontController
 		if (strpos($path, $this->basePath) === 0) {
 			$path = substr($path, strlen($this->basePath));
 		}
-		list($controller, $action, $params) = explode("/", $path, 3);
+		@list($controller, $action, $params) = explode("/", $path, 3);
 		if (!empty($controller)) {
 			$this->setController($controller);
 		}
