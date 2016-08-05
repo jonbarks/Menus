@@ -1,6 +1,6 @@
 <header>
 <?php 
-if( $isSignedIn){
+if( isset($isSignedIn) && $isSignedIn){
 ?>	
 	<div class=ribbon> Hello,
 	<?php print $username; ?>

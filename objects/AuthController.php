@@ -16,6 +16,7 @@ class AuthController
 	
 	private function isSubmitForSignIn()
 	{
+		
 		if( isset($_POST['submit']) && $_POST['submit'] == 'signIn')
 			return true;
 		return false;

@@ -1,27 +1,21 @@
-
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="stylesheet" href="menu.css" type="text/css">
+<!-- <link rel="stylesheet" href="menu.css" type="text/css"> -->
 <title>Food Entry</title>
 </head>
 
 <body>
 <?php
 include 'ribbon.html';
-?>
-<?php
-if( $newFoodAdded)
+if( isset( $newFoodAdded) && $newFoodAdded)
 { 
 ?>
 <span class="foodadded">
 <?= $foodname ?> with <?= $calories ?> calories was added.
 </span>
-
 <?php
-// end $newFoodAdded
 }
-
 ?>
 <div class="foodentry">
 <br>
@@ -37,7 +31,6 @@ Enter a food name (and optional description) and its calories:
 </pre>	
 </form>
 </div>
-
 
 </body>
 </html>
